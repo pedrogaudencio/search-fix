@@ -1,0 +1,28 @@
+
+features:
+- Pocket-like notification
+- store selected text result
+- login/no-login stuff
+- fuzzy string matching (out of order support)
+- think about how to do it and then check in the written code if there's anything we can take
+- Firefox extention
+- check for a good method to store the query string and to follow the result search
+- check the RAM consuption
+- do some hooks to see how people use it
+- see the storage limit on chrome and firefox
+- 
+
+suggestions:
+- put result box on the right side of the page with an absolute position value and scroll the right content
+- 
+
+start with:
+- google
+- bing
+- yahoo
+
+
+
+problems:
+- google has instant answers, all the others are fine
+- 

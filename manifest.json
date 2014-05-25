@@ -1,0 +1,67 @@
+{
+  "manifest_version": 2,
+
+  "name": "SearchFix",
+  "description": "Should save some time some day...",
+  "version": "0.9.4",
+  "author": [ {
+      "name": "Martin Vesper",
+      "email": "mvesper1@googlemail.com"
+     },
+     {
+      "name": "Pedro Gaudêncio",
+      "email": "pmgaudencio@gmail.com"
+      }
+  ],
+  "options_page": "options/template.html",
+
+  "permissions": [
+    "storage",
+    "tabs"
+  ],
+  "content_scripts": [
+    {
+      "matches": [ "*://*/*" ],
+      "include_globs": [
+        "*://*.google.*/*"
+      ],
+      "js": ["assets/jquery-2.1.1.min.js", "content/searchfix.js"],
+      "run_at": "document_end"         // pay attention to this line
+    },
+    {
+      "matches": [
+        "*://*/*"
+      ],
+      "js": ["assets/jquery-2.1.1.min.js",
+             "assets/jquery-ui.js",
+             "assets/jquery_toast/src/main/javascript/jquery.toastmessage.js",
+             "content/tracker.js",
+             "content/scrollposition.js",
+             "content/addHTMLtoPage.js",
+             "content/select.js",
+             "content/scrollToPosition.js",
+             "content/toastmessage.js"],
+      "css": ["assets/jquery-ui.css",
+              "assets/jquery_toast/src/main/resources/css/jquery.toastmessage.css"],
+      "run_at": "document_end"         // pay attention to this line
+    }
+  ],
+  "background": {
+    "scripts": ["bg/clickevent.js", "bg/storage.js", "bg/scrollToPosition.js"]
+  },
+  "browser_action": {
+    "default_icon": "assets/icon.png",
+    "default_title": "SearchFix"
+  },
+  "commands": {
+    "_execute_browser_action": {
+      "suggested_key": {
+        "windows": "Alt+S",
+        "mac": "Alt+S",
+        "chromeos": "Alt+S",
+        "linux": "Alt+S"
+      }
+    }
+  }
+
+}
